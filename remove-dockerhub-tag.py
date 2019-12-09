@@ -22,7 +22,7 @@ for image in args.image:
         name = m.group(2)
         tag = m.group(3)
         r = requests.delete(f'https://hub.docker.com/v2/repositories/{org}/{name}/tags/{tag}/', headers={"Authorization": f'JWT {token}'})
-        if r.status_code == 200:
-            print(f'tag removed: {image}')
+        if r.status_code == 204:
+            print(f'removed: {image}')
         else:
-            print(f'failed to remove tag "{image}": {r.text}')
+            print(f'failed to remove "{image}": {r.text}')
