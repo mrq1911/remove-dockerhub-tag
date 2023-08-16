@@ -4,8 +4,8 @@ import argparse
 import re
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--user', required=True, help='dockerhub username')
-parser.add_argument('--password', required=True, help='dockerhub password')
+parser.add_argument('-u', '--user', required=True, help='dockerhub username')
+parser.add_argument('-p', '--password', required=True, help='dockerhub password')
 parser.add_argument('image', nargs='+', help='org/image:tag')
 args = parser.parse_args()
 
